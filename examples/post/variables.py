@@ -22,16 +22,20 @@
 # 16. COSP variables
 # 16.1 COSP input variables
 # 17. Miscellanenous
+# 18. ISBA variables
 
 variables = {
 # 1. Dynamical and thermodynamical variables
     'hur'               : {'varname':               'PRH', 'units':                 '-', 'coef':         1, 'name':'Relative Humidity'}, 
     'pf'                : {'varname':            'PAPRSF', 'units':                'Pa', 'coef':         1, 'name':'Pressure on Full Levels'}, 
     'ph'                : {'varname':             'PAPRS', 'units':                'Pa', 'coef':         1, 'name':'Pressure on Half Levels'}, 
+    'qg'                : {'varname':               'PQG', 'units':             'kg/kg', 'coef':         1, 'name':'Specific Mass of Graupel'}, 
     'qi'                : {'varname':             'PQICE', 'units':             'kg/kg', 'coef':         1, 'name':'Specific Mass of Cloud Ice Water'}, 
+    'qim'               : {'varname':               'PQI', 'units':             'kg/kg', 'coef':         1, 'name':'Specific Mass of Cloud Ice Water in Microphysics'}, 
     'qic'               : {'varname':           'PQICONV', 'units':             'kg/kg', 'coef':         1, 'name':'Specific Mass of Convective Ice Water'}, 
     'qishc'             : {'varname':         'PQISHCONV', 'units':             'kg/kg', 'coef':         1, 'name':'Specific Mass of Shallow Convection Ice Water'}, 
     'ql'                : {'varname':              'PQLI', 'units':             'kg/kg', 'coef':         1, 'name':'Specific Mass of Cloud Liquid Water'}, 
+    'qlm'               : {'varname':               'PQL', 'units':             'kg/kg', 'coef':         1, 'name':'Specific Mass of Cloud Liquid Water in Microphysics'}, 
     'qlc'               : {'varname':           'PQLCONV', 'units':             'kg/kg', 'coef':         1, 'name':'Specific Mass of Convective Liquid Water'}, 
     'qlshc'             : {'varname':         'PQLSHCONV', 'units':             'kg/kg', 'coef':         1, 'name':'Specific Mass of Shallow Convection Liquid Water'}, 
     'qr'                : {'varname':               'PQR', 'units':             'kg/kg', 'coef':         1, 'name':'Specific Mass of Rain'}, 
@@ -74,6 +78,18 @@ variables = {
     'rain'              : {'varname':         'PRECS_TOT', 'units':           'kg/m2/s', 'coef':         1, 'name':'Surface Precipitation'}, 
     'snowc'             : {'varname':            'PFPLCN', 'units':           'kg/m2/s', 'coef':         1, 'name':'Convective Snow Flux'}, 
     'snowls'            : {'varname':            'PFPLSN', 'units':           'kg/m2/s', 'coef':         1, 'name':'Large-Scale Snow Flux'}, 
+    'grauls'            : {'varname':            'PFPLSG', 'units':           'kg/m2/s', 'coef':         1, 'name':'Large-Scale Graupel Flux'}, 
+    'pfpfpsl'           : {'varname':           'PFPFPSL', 'units':           'kg/m2/s', 'coef':         1, 'name':'Large-Scale Rain Generation Flux Term'}, 
+    'pfpfpsn'           : {'varname':           'PFPFPSN', 'units':           'kg/m2/s', 'coef':         1, 'name':'Large-Scale Snow Generation Flux Term'}, 
+    'pfpfpsg'           : {'varname':           'PFPFPSG', 'units':           'kg/m2/s', 'coef':         1, 'name':'Large-Scale Graupel Generation Flux Term'}, 
+    'pfpfpcl'           : {'varname':           'PFPFPCL', 'units':           'kg/m2/s', 'coef':         1, 'name':'Convective Rain Generation Flux Term'}, 
+    'pfpfpcn'           : {'varname':           'PFPFPCN', 'units':           'kg/m2/s', 'coef':         1, 'name':'Convective Snow Generation Flux Term'}, 
+    'pfpevpsl'          : {'varname':          'PFPEVPSL', 'units':           'kg/m2/s', 'coef':         1, 'name':'Large-Scale Rain Sink Flux Term'}, 
+    'pfpevpsn'          : {'varname':          'PFPEVPSN', 'units':           'kg/m2/s', 'coef':         1, 'name':'Large-Scale Snow Sink Flux Term'}, 
+    'pfpevpsg'          : {'varname':          'PFPEVPSG', 'units':           'kg/m2/s', 'coef':         1, 'name':'Large-Scale Graupel Sink Flux Term'}, 
+    'pfpevpcl'          : {'varname':          'PFPEVPCL', 'units':           'kg/m2/s', 'coef':         1, 'name':'Convective Rain Sink Flux Term'}, 
+    'pfpevpcn'          : {'varname':          'PFPEVPCN', 'units':           'kg/m2/s', 'coef':         1, 'name':'Convective Snow Sink Flux Term'}, 
+    'pfpevpcg'          : {'varname':          'PFPEVPCG', 'units':           'kg/m2/s', 'coef':         1, 'name':'Convective Graupel Sink Flux Term'}, 
 # 4. Radiation variables
     'I0'                : {'varname':               'ZI0', 'units':              'W/m2', 'coef':         1, 'name':'Solar irradiance'}, 
     'LWd'               : {'varname':               'LWd', 'units':              'W/m2', 'coef':         1, 'name':'Downward LW Flux'}, 
@@ -168,6 +184,7 @@ variables = {
     'tnqsnc'            : {'varname':        'TENDQSCONV', 'units':           'kg/kg/s', 'coef':         1, 'name':'Convective Snow Tendency due to Physics'}, 
     'tnqsnc'            : {'varname':        'TENDQSCONV', 'units':           'kg/kg/s', 'coef':         1, 'name':'Convective Snow Tendency due to Physics'}, 
     'tnqt'              : {'varname':            'TENDQT', 'units':           'kg/kg/s', 'coef':         1, 'name':'Total Water Tendency due to Physics'}, 
+    'tnqg'              : {'varname':            'TENDQG', 'units':           'kg/kg/s', 'coef':         1, 'name':'Graupel Tendency due to Physics'}, 
     'tnqtc'             : {'varname':           'TENDCQT', 'units':           'kg/kg/s', 'coef':         1, 'name':'Total Water Tendency due to Convection'}, 
     'tnqtd'             : {'varname':           'TENDMQT', 'units':           'kg/kg/s', 'coef':         1, 'name':'Total Water Tendency due to Other Processes'}, 
     'tnqtlscp'          : {'varname':           'TENDSQT', 'units':           'kg/kg/s', 'coef':         1, 'name':'Total Water Tendency due to Large-scale Condensation and Precipitation'}, 
